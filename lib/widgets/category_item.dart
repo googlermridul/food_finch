@@ -29,24 +29,24 @@ class CategoryItem extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.all(15),
           decoration: BoxDecoration(
-            // gradient: LinearGradient(
-            //   colors: [
-            //     color,
-            //     color.withOpacity(.8),
-            //   ],
-            //   begin: Alignment.topLeft,
-            //   end: Alignment.bottomRight,
-            // ),
+            gradient: LinearGradient(
+              colors: [
+                color,
+                color.withOpacity(.8),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
             borderRadius: BorderRadius.circular(5),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image.network(
-                image,
-                fit: BoxFit.contain,
-              ),
-              const SizedBox(height: 15),
+              // Image.network(
+              //   image,
+              //   fit: BoxFit.contain,
+              // ),
+              // const SizedBox(height: 15),
               Text(
                 title,
                 textAlign: TextAlign.center,

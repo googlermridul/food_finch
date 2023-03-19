@@ -12,7 +12,7 @@ class CategoryMeals extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final routeArguments =
-        ModalRoute.of(context)?.settings.arguments as Map<String, String>;
+        ModalRoute.of(context)!.settings.arguments as Map<String, String>;
     final id = routeArguments['id'];
     final title = routeArguments['title'];
     final meals = dummyMeals.where((element) {
@@ -20,20 +20,25 @@ class CategoryMeals extends StatelessWidget {
     }).toList();
 
     return Scaffold(
-        appBar: AppBar(
-          title: Text(title!),
+      appBar: AppBar(
+        title: Text(
+          title!,
+          style: TextStyle(fontFamily: "Jost"),
         ),
-        body: ListView.builder(
-          itemBuilder: (ctx, index) {
-            return MealItem(
-              title: meals[index].title,
-              imageUrl: meals[index].imageUrl,
-              duration: meals[index].duration,
-              complexity: meals[index].complexity,
-              affordability: meals[index].affordability,
-            );
-          },
-          itemCount: meals.length,
-        ));
+      ),
+      body: ListView.builder(
+        itemBuilder: (ctx, index) {
+          return MealItem(
+            id: meals[index].id,
+            title: meals[index].title,
+            imageUrl: meals[index].imageUrl,
+            duration: meals[index].duration,
+            complexity: meals[index].complexity,
+            affordability: meals[index].affordability,
+          );
+        },
+        itemCount: meals.length,
+      ),
+    );
   }
 }
