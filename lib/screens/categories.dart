@@ -11,15 +11,18 @@ class CategoriesScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Food Finch Categories"),
       ),
-      body: GridView(
-        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: 200,
-          childAspectRatio: 3 / 2,
-          crossAxisSpacing: 20,
-          mainAxisSpacing: 20,
-        ),
+      body: GridView.count(
+        padding: const EdgeInsets.all(20),
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
+        crossAxisCount: 3,
         children: categoriesData
-            .map((e) => CategoryItem(title: e.title, color: e.color))
+            .map((e) => CategoryItem(
+                  id: e.id,
+                  title: e.title,
+                  color: e.color,
+                  image: e.image,
+                ))
             .toList(),
       ),
     );
