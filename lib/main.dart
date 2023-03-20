@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_finch/screens/categories.dart';
 import 'package:food_finch/screens/category_meals.dart';
+import 'package:food_finch/screens/filter_screen.dart';
 import 'package:food_finch/screens/meal_detail.dart';
 import 'package:food_finch/screens/tabs_screen.dart';
 
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
         "/": (context) => TabsScreen(),
         CategoryMeals.routeName: (context) => CategoryMeals(),
         MealDetail.routeName: (context) => MealDetail(),
+        FilterScreen.routeName: (context) => FilterScreen(),
       },
       onGenerateRoute: (settings) {
         return MaterialPageRoute(builder: ((context) => CategoriesScreen()));

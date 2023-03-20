@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_finch/screens/categories.dart';
 import 'package:food_finch/screens/favorites_screen.dart';
+import 'package:food_finch/widgets/drawer.dart';
 
 class TabsScreen extends StatefulWidget {
   const TabsScreen({super.key});
@@ -31,6 +32,7 @@ class _TabsScreenState extends State<TabsScreen> {
           style: TextStyle(fontFamily: "Jost"),
         ),
       ),
+      drawer: CustomDrawer(),
       body: _pages[_selectedPageIndex]['page'],
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectPage,
